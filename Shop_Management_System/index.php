@@ -1,25 +1,24 @@
 <?php
-/*Noy and Aline*/
+
 
     require_once("shoeClass.php");
     require_once("storeClass.php");
     require_once("home.html");
 
- /*insert the data from Fields to data base and cheack if all Fields is fill*/
-    if(isset($_POST['id_item']) && (!is_numeric($_POST['id_item'])))/*if id not correct or  not exist*/
+    if(isset($_POST['id_item']) && (!is_numeric($_POST['id_item'])))
 	{
         echo "<p>please enter right Id item</p>";
     }
-	else if(isset($_POST['id_item']) && (shoe::checkId($_POST['id_item'])))/*cheak if item already exist*/
+	else if(isset($_POST['id_item']) && (shoe::checkId($_POST['id_item'])))
 	{
         echo "<p>Id: ".$_POST['id_item'].";  is already exist</p>";
     }
-	else if(isset($_POST['price_item']) && (!is_numeric($_POST['price_item'])))/*if price not correct or not exists */
+	else if(isset($_POST['price_item']) && (!is_numeric($_POST['price_item'])))
 	{
         echo "<p>please enter right item</p>";
     }
 	else if((isset($_POST['id_item'])&&($_POST['id_item']!= null))&&(isset($_POST['model_item'])&&($_POST['model_item'] != null))&&(isset($_POST['price_item'])&&($_POST['price_item'] != null))&&(isset($_POST['nameOfStore'])&& ($_POST['nameOfStore'] != null))){
-       /*cheak all fields fill and put the in varibles*/
+       
 	   $id = $_POST['id_item'];
         $model= $_POST['model_item'];
         $price = $_POST['price_item'];
@@ -29,17 +28,17 @@
         $shoe->insert($id, $model, $price);
 
         $someStore = new store();
-        $someStore->insert($id, $s_name);/*insert to name of store*/
+        $someStore->insert($id, $s_name);
         echo "<br><p>insert sucsses</p><br> 
               id: $id, model: $model, price: $price, Store Name: $s_name</p>";
     }
 	else
 	{
-		/*if all fields not fill*/
+		
         echo "<p>please enter all fields</p>";
     }
 
-   /*delete the item from data base*/
+   
     if(isset($_POST['_idDel'])){
         $shoe = new shoe();
         $shoe->delete($_POST['_idDel']);
