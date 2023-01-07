@@ -1,5 +1,5 @@
 <?php 
-/*Noy and Aline*/
+
 
     require_once("home.html"); 
     require_once("brandsclass.php");
@@ -8,7 +8,7 @@
     $a = array();
 
 	
-	/*when we got the serial and description we update*/
+	
     if(isset($_POST['_serial'])&& isset($_POST['_description']))
 	{
 		 $a = $brand->update($_POST['_serial'], $_POST['_description']);
@@ -23,7 +23,6 @@
     
 	}
 ?>
-<!-- form fields -->
 <br><br><br>
 <h1>data about brand's item</h1><br><br>
 <form action="" method="post">  
