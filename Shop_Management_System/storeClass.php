@@ -1,5 +1,4 @@
 <?php
-/*Noy and Aline*/
 
     require_once("dbClass.php");
     require_once("shoeClass.php");
@@ -16,7 +15,7 @@
         public function getStoreName(){
             return $this->store_name;
         }
-        /*set's functions*/
+        
         public function setID($id){
             $this->id = $id;
         }
@@ -26,7 +25,7 @@
         }
   
 
-         /*Echo data about same product*/
+        
         public function getInfoById($id){
             $conn = new dbClass();
             $conn->connect();
@@ -42,7 +41,7 @@
             $conn->disconnect();
         }
 
-       /*Echo info of all products in data base*/
+       
         public function getAllInfo(){
             $conn = new dbClass();
             $conn->connect();
@@ -59,7 +58,7 @@
             $conn->disconnect();
         }
         
-      /*open file and save all data of item in dat base */   
+        
         public function createFile(){
             $conn = new dbClass();
             $conn->connect();
@@ -83,7 +82,7 @@
         $conn->disconnect();			
     }
 	
-        /*insert into Data Base to store table id and store_name*/
+        
         public function insert($id , $store_name){
             $conn = new dbClass();
             $conn->connect();
