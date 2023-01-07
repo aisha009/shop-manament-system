@@ -1,5 +1,5 @@
 <?php
-/*Noy and Aline*/
+
 
     require_once("dbClass.php");
 
@@ -8,7 +8,7 @@
         private $serial;
         private $description;
  
-        /*get's functions*/
+       
         public function getSerial(){
             return $serial;
         }
@@ -17,7 +17,7 @@
             return $description;
         }
         
-		/*set's functions*/
+		
         public function setSerial($serial){
             $this->serial= $serial;
         }
@@ -26,7 +26,7 @@
             $this->description = $description;
         }
         
-        /*update  table brands in data base*/  
+         
         public function update($serial="", $description=""){
             $conn = new dbClass();
             $conn->connect();
