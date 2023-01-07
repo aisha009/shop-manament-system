@@ -1,5 +1,5 @@
 <?php
-/*Aline and Noy*/
+
     class dbClass{
         private $host;
         private $db;
@@ -23,7 +23,7 @@
             $this->user = $user;
             $this->pass = $pass;
         }
-        /*connection method*/
+      
         public function getConnection(){
             return $this->connection;
         }
@@ -35,11 +35,11 @@
                     charset=$this->charset";
             $this->connection = new PDO($dsn, $this->user, $this->pass, $this->opt);
         }
- /*disconnect method*/
+
         public function disconnect(){
             $this->connection = null;
         }
-  /*Count supply function, return number of supplyes*/
+  
         public function cntSupply(){
 			$this->connect();
 			$result=$this->connection->query("SELECT COUNT(id) FROM user");
