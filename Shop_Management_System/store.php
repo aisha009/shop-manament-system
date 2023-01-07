@@ -1,5 +1,4 @@
 <?php
-/*Aline and Noy*/
 
     require_once("storeClass.php");
     require_once("home.html");
@@ -8,17 +7,17 @@
     $someStore = new store();
     $someStore->myEcho();
 
-/*return all brands products*/
+
     if(isset($_POST['allPro'])){
         $someStore->getAllInfo();
     }
 
-/*return data about spesific item*/
+
     if(isset($_POST['storeId'])){
         $someStore->getInfoById($_POST['storeId']);
     }
 
-/*insert all items to file*/
+
     if(isset($_POST['report'])){
         $someStore->createFile();
     }
